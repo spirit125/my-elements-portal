@@ -80,7 +80,7 @@ const treeNodeClick = (event) => {
 
     <lt-container lt-layout='[{ "Name" : "header" },{ "Name" : "div", "Child" : [{ "Name" : "aside", "Width": "200px" },{ "Name" : "div", "Child" : [{ "Name" : "main" },{ "Name" : "footer" }] }] }]'
             lt-slots='["aside","main","header","footer"]'
-            style="--el-header-padding: 0px; --el-footer-padding: 0px;  display: flex; height: 100%;"
+            style="--el-header-padding: 0px; --el-footer-padding: 0px;  display: flex; height: 100%; width: 100%;"
             >
         <span slot="header"><div class="lt-header full"><h1>my-element / App.vue</h1></div></span>
         <span slot="aside"><div class="lt-aside full">
@@ -93,19 +93,20 @@ const treeNodeClick = (event) => {
 }
           "></lt-tree>
         </div></span>
-        <span slot="main"><div class="full" style="width:950px;height:95%;">
+        <span slot="main"><div class="full" style="width:100%;height:100%;">
             <lt-tabs ref="tabsRef" 
                 :lt-model-layout="tabSource" @update:ltModelLayout="tabSource = $event.detail[0]" 
                 :lt-model-active-name="tabActiveName" @update:ltModelActiveName="tabActiveName = $event.detail[0];"
                 lt-type="border-card" 
                 lt-tab-position="top"
-                style="height: 100%;"
+                style="box-sizing: border-box; width: 100%; height: 100%;"
                 lt-insert-style="
 .lt-tabs .el-tabs__content
 {
   overflow: auto;
-  width: 900px;
-  height: 95%;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 }
                 "
                 >
