@@ -80,7 +80,8 @@ const treeNodeClick = (event) => {
 
     <lt-container lt-layout='[{ "Name" : "header" },{ "Name" : "div", "Child" : [{ "Name" : "aside", "Width": "200px" },{ "Name" : "div", "Child" : [{ "Name" : "main" },{ "Name" : "footer" }] }] }]'
             lt-slots='["aside","main","header","footer"]'
-            style="--el-header-padding: 0px; --el-footer-padding: 0px; height: 100%;">
+            style="--el-header-padding: 0px; --el-footer-padding: 0px;  display: flex; height: 100%;"
+            >
         <span slot="header"><div class="lt-header full"><h1>my-element / App.vue</h1></div></span>
         <span slot="aside"><div class="lt-aside full">
           <lt-tree ref="treeRef" 
@@ -92,29 +93,30 @@ const treeNodeClick = (event) => {
 }
           "></lt-tree>
         </div></span>
-        <span slot="main"><div class="full" style="width:950px;">
+        <span slot="main"><div class="full" style="width:950px;height:95%;">
             <lt-tabs ref="tabsRef" 
                 :lt-model-layout="tabSource" @update:ltModelLayout="tabSource = $event.detail[0]" 
                 :lt-model-active-name="tabActiveName" @update:ltModelActiveName="tabActiveName = $event.detail[0];"
                 lt-type="border-card" 
                 lt-tab-position="top"
+                style="height: 100%;"
                 lt-insert-style="
 .lt-tabs .el-tabs__content
 {
   overflow: auto;
   width: 900px;
-  height: 600px;
+  height: 95%;
 }
                 "
                 >
                 <div slot="titleMain">
-                    <div style="padding: 10px;">
+                    <div style="padding:0px;">
                         全部
                     </div>
                 </div>
                 <div slot="main" style="height: 100%;">
-                    <div style="height: 100%;padding: 10px;">
-                        <iframe src="http://localhost/test-my-elements-app/ShowLtTable" style="width:100%; height:350%; border-style:none;"></iframe>
+                    <div style="height: 100%;">
+                        <iframe src="http://localhost/test-my-elements-app/ShowLtTable" style="width:100%; height:100%; border-style:none;"></iframe>
                     </div>
                 </div>
             </lt-tabs>
