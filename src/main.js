@@ -5,5 +5,6 @@ await import('@/assets/my-elements.cjs.js')//動態載入 Web Component 模組�
 
 import { createApp } from 'vue'
 import App from './App.vue'
+import ElementPlus from 'element-plus'
 
-createApp(App).mount('#app')
+createApp(App).use(ElementPlus).mount('#app')

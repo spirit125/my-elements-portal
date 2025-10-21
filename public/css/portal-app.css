@@ -1,0 +1,18 @@
+
+.el-header{
+    --el-header-height: auto;/*高度依內容自動調整*/
+}
+
+.lt-tree .el-text {
+    font-size: 18px;
+}
+
+
+/* 忘記lt-tabs為什麼加這個，先註解起來試試看 */
+/* .lt-tabs .el-tabs__content
+{
+overflow: auto;
+box-sizing: border-box;
+width: 100%;
+height: 100%;
+} */
